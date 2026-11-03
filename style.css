@@ -1,0 +1,111 @@
+:root {
+  --noir: #111110;
+  --charbon: #191918;
+  --charbon-clair: #222220;
+  --ivoire: #eeeae2;
+  --gris: #aaa69e;
+  --ligne: #45433f;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: Arial, Helvetica, sans-serif;
+}
+*{ 
+  box-sizing: border-box; 
+}
+html {
+   scroll-behavior: smooth; 
+  }
+body { margin: 0; color: var(--ivoire); background: var(--noir); font-family: var(--sans); }
+a { color: inherit; text-decoration: none; }
+.entete { height: 66px; padding: 0 5.5%; display: flex; justify-content: space-between; align-items: center; background: var(--noir); font-size: 10px; letter-spacing: .12em; }
+.signature-entete { font-family: var(--serif); font-size: 21px; letter-spacing: -.08em; }
+.entete nav { display: flex; gap: 27px; }
+.entete nav a, .numero-edition { text-transform: uppercase; }
+.couverture { min-height: 700px; height: calc(100svh - 66px); max-height: 1100px; padding: 27px 7% 23px; position: relative; overflow: hidden; background: #20201e; }
+.couverture::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: rgba(0, 0, 0, .38); }
+.couverture-haut, .lien-suite { position: relative; z-index: 3; display: flex; justify-content: space-between; font-size: 9px; letter-spacing: .16em; }
+.composition-couverture { position: absolute; inset: 0; }
+.visuel-couverture { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; overflow: hidden; background: #262522; }
+.visuel-couverture img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.visuel-couverture figcaption { position: absolute; z-index: 2; bottom: 8%; right: 7%; color: var(--ivoire); font-size: 9px; letter-spacing: .2em; text-shadow: 0 1px 8px #000; }
+.composition-couverture h1 { position: absolute; z-index: 2; left: 7%; top: 16%; width: auto; transform: none; margin: 0; color: var(--ivoire); text-align: left; font: 400 clamp(58px, 10vw, 138px)/.78 var(--serif); letter-spacing: -.085em; text-shadow: 0 2px 18px rgba(0, 0, 0, .35); }
+.mot-lateral { position: absolute; z-index: 2; margin: 0; color: var(--ivoire); font-size: 9px; line-height: 1.8; letter-spacing: .16em; }
+.mot-gauche { top: 11%; left: 7%; }.mot-droite { top: 67%; right: 7%; text-align: right; }
+.accroche-couverture { position: absolute; z-index: 2; left: 7%; bottom: 14%; width: 25%; margin: 0; color: var(--ivoire); font: italic 16px/1.45 var(--serif); }
+.date-verticale { position: absolute; z-index: 2; right: 7%; top: 22%; writing-mode: vertical-rl; color: var(--ivoire); font-size: 9px; letter-spacing: .2em; }
+.lien-suite { position: absolute; z-index: 3; left: 7%; right: 7%; bottom: 22px; }
+.lien-suite span { font-size: 17px; }
+.section-large { padding: 96px 11%; background: var(--noir); }
+.surtitre, .petit-label { color: var(--gris); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
+.introduction { padding-top: 140px; }
+.introduction-contenu { display: grid; grid-template-columns: 1fr .8fr; gap: 9%; margin: 46px 0 42px; }
+h2 { font: 400 clamp(40px, 6vw, 76px)/.98 var(--serif); letter-spacing: -.045em; margin: 0; }
+h2 em { font-weight: 400; color: #c2bcb1; }
+.texte-introduction { max-width: 420px; padding-top: 8px; color: #d0ccc4; font-size: 14px; line-height: 1.8; }
+.texte-grand { color: var(--ivoire); font: 22px/1.4 var(--serif); }
+.portrait-profil { width: 42%; margin: 0 8% 0 auto; }
+.portrait-profil img { display: block; width: 100%; max-height: 500px; object-fit: cover; background: var(--charbon-clair); }
+.portrait-profil p { color: var(--gris); font-size: 8px; letter-spacing: .16em; text-align: right; }
+.famille { background: var(--charbon); }
+.famille-grille { display: grid; grid-template-columns: .85fr 1fr; gap: 12%; margin-top: 46px; }
+.texte-famille { max-width: 490px; color: #d0ccc4; font-size: 14px; line-height: 1.9; }
+.ligne-famille { margin-top: 58px; padding: 17px 0; display: flex; justify-content: space-between; color: var(--gris); font-size: 9px; letter-spacing: .15em; }
+.parcours-entete, .moments-entete { display: flex; justify-content: space-between; align-items: end; margin: 46px 0 38px; }
+.parcours-entete > p, .moments-entete > p { max-width: 270px; color: #c8c4bc; font: 16px/1.6 var(--serif); }
+.chronologie { list-style: none; padding: 0; margin: 0;  }
+.chronologie li { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 25px 0; }
+.annee { color: #c2bcb1; font: 20px var(--serif); }
+.chronologie h3 { margin: 0 0 8px; font: 21px var(--serif); font-weight: 400; }
+.chronologie p { margin: 0; max-width: 570px; color: #bcb8b0; font-size: 13px; line-height: 1.7; }
+.livre { background: #1b1b19; }
+.livre-composition { margin-top: 60px; display: grid; grid-template-columns: .6fr 1fr .8fr; gap: 6%; align-items: center; }
+.livre-note { align-self: start; color: var(--gris); font-size: 9px; letter-spacing: .15em; line-height: 1.8; }
+.couverture-livre { min-height: 390px; padding: 23px; border: 1px solid #77736b; display: flex; flex-direction: column; justify-content: space-between; text-align: center; }
+.couverture-livre span { color: #c2bcb1; font-size: 8px; letter-spacing: .18em; }
+.couverture-livre h2 { font-size: clamp(45px, 6vw, 76px); }
+.livre-texte { color: #d0ccc4; font: 19px/1.5 var(--serif); }
+.livre-texte .petit-label { display: block; margin-bottom: 20px; font-family: var(--sans); }
+.langues-contenu { display: flex; justify-content: space-between; align-items: end; margin: 46px 0; }
+.langues-contenu > p { max-width: 300px; color: #d0ccc4; font: 18px/1.5 var(--serif); }
+.langues-ligne { display: flex; justify-content: space-between; padding: 19px 0; color: #c2bcb1; font-size: 9px; letter-spacing: .15em; }
+.moments { background: var(--charbon); }
+.evenement { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 23px 0;  }
+.evenement:last-child { padding-bottom: 0; }
+.evenement span { color: var(--gris); font-size: 10px; letter-spacing: .12em; }
+.evenement p { margin: 0; color: var(--ivoire); font: 22px var(--serif); }
+.amitie h2 { margin: 46px 0; }
+.amitie-villes { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; padding-top: 23px; }
+.amitie-villes p { color: var(--ivoire); font: 23px/1.6 var(--serif); }
+.amitie-villes small { color: var(--gris); font-size: 11px; }
+.ville { background: var(--charbon); }
+.ville-composition { min-height: 300px; padding-top: 65px; position: relative; }
+.ville-date { position: absolute; right: 0; top: 60px; color: var(--gris); font-size: 9px; letter-spacing: .15em; }
+.ville-composition h2 { font-size: clamp(43px, 7vw, 88px); }
+.trajet { margin-top: 52px; display: flex; align-items: center; gap: 20px; color: #c2bcb1; font-size: 9px; letter-spacing: .18em; }
+.trait-trajet { width: auto; height: auto; background: none; }
+.trait-trajet::before { content: '→'; color: #c2bcb1; font-size: 15px; }
+.conclusion { padding: 110px 15%; background: #0c0c0b; text-align: center; }
+.phrase-finale { max-width: 890px; margin: 55px auto 36px; color: var(--ivoire); font: clamp(34px, 6vw, 70px)/1.12 var(--serif); letter-spacing: -.035em; }
+.signature-finale { color: #c2bcb1; font: italic 20px var(--serif); }
+.pied-page { padding: 25px 5.5%; display: flex; justify-content: space-between; background: var(--noir); color: var(--gris); font-size: 8px; letter-spacing: .14em; }
+@media (max-width: 700px) {
+  .entete { height: 58px; padding: 0 5%; }.entete nav { gap: 12px; font-size: 8px; }.entete nav a:nth-child(3) { display: none; }.numero-edition { display: none; }
+  .couverture { height: calc(100svh - 58px); min-height: 650px; padding: 22px 6% 20px; }
+  .composition-couverture h1 { top: 62%; left: 6%; font-size: clamp(52px, 13vw, 70px); }
+  .mot-gauche { top: 12%; left: 6%; }.mot-droite { top: 50%; right: 6%; }
+  .accroche-couverture { left: 6%; top: 25%; bottom: auto; width: 74%; font-size: 14px; }
+  .date-verticale { right: 6%; top: 18%; }
+  .visuel-couverture img { object-position: center 40%; }
+  .section-large { padding: 72px 7%; }
+  .introduction { padding-top: 78px; }.introduction-contenu, .famille-grille { grid-template-columns: 1fr; gap: 24px; margin-top: 38px; }
+  .texte-introduction { font-size: 13px; }.texte-grand { font-size: 19px; }.portrait-profil { width: 68%; margin-right: 4%; }
+  .ligne-famille { flex-wrap: wrap; gap: 14px; }.ligne-famille span { width: 43%; }
+  .parcours-entete, .moments-entete, .langues-contenu { display: block; margin: 38px 0; }.parcours-entete > p, .moments-entete > p, .langues-contenu > p { margin-top: 20px; }
+  .chronologie li, .evenement { grid-template-columns: 90px 1fr; gap: 15px; }.annee { font-size: 16px; }.chronologie h3 { font-size: 18px; }
+  .livre-composition { grid-template-columns: 1fr 1fr; gap: 20px; }.livre-note { grid-column: 1 / -1; }.couverture-livre { min-height: 300px; padding: 15px; }.livre-texte { font-size: 16px; }
+  .langues-ligne { flex-wrap: wrap; gap: 17px; }.langues-ligne span:last-child { width: 100%; }
+  .evenement p { font-size: 18px; }.amitie h2 { margin: 38px 0; }.amitie-villes { gap: 18px; }.amitie-villes p { font-size: 18px; }
+  .ville-composition { min-height: 270px; padding-top: 75px; }.ville-date { top: 23px; }.ville-composition h2 { font-size: 44px; }
+  .conclusion { padding: 95px 8%; }.phrase-finale { margin: 42px auto 30px; font-size: 40px; }
+  .pied-page { gap: 15px; flex-wrap: wrap; font-size: 7px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
